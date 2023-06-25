@@ -16,7 +16,7 @@ class Products extends CI_Controller
         $products = $this->Products_model->searchData($name);
         $jsonData = json_encode($products);
         $this->output->set_content_type('application/json')->set_output($jsonData);
-        $this->log_activity();
+       
     }
 
     public function index()
@@ -24,7 +24,7 @@ class Products extends CI_Controller
         $data = $this->Products_model->getAll();
         $jsonData = json_encode($data);
         $this->output->set_content_type('application/json')->set_output($jsonData);
-        $this->log_activity();
+        
     }
 
     public function show($id)
@@ -38,7 +38,7 @@ class Products extends CI_Controller
             http_response_code(400);
             $this->output->set_content_type('application/json')->set_output($jsonData);
         }
-        $this->log_activity();
+      
     }
 
     public function check_category($category_id)
@@ -90,7 +90,7 @@ class Products extends CI_Controller
         }
         $jsonData = json_encode($response);
         $this->output->set_content_type('application/json')->set_output($jsonData);
-        $this->log_activity();
+       
     }
 
     public function update($id)
@@ -130,7 +130,7 @@ class Products extends CI_Controller
         }
         $jsonData = json_encode($response);
         $this->output->set_content_type('application/json')->set_output($jsonData);
-        $this->log_activity();
+       
     }
 
     public function delete($id)
@@ -150,6 +150,6 @@ class Products extends CI_Controller
             http_response_code(400);
         }
         $this->output->set_content_type('application/json')->set_output(json_encode($response));
-        $this->log_activity();
+        
     }
 }
